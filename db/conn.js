@@ -7,7 +7,7 @@ const client = new Client({
     database: process.env.PG_DB,
     password: process.env.PG_PASS,
     port: process.env.PG_PORT,
-    ssl:{rejectUnauthorized:false}
+    ssl:false
 });
 
 async function check(){
