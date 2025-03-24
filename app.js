@@ -7,7 +7,11 @@ const cors = require('cors');
 require('dotenv').config();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://rishabh0059.github.io', // Allow requests from your frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // Allow cookies or authentication headers
+}));
 app.use('/uploads',express.static('uploads'));
 
 const multer  = require('multer')
